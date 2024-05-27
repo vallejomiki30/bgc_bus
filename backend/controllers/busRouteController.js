@@ -4,9 +4,9 @@ import Routes from '../models/busRoute.js'
 import Users from '../models/user.js'
 
 const getRoutes = asyncHandler(async (req, res) => {
-    const data = {"route": "test_route"}
+    const data = await Routes.find({})
     if (data) {
-        res.status(200).json(data)
+        res.status(200).json({"results": data})
     }
     else {
         res.status(400)
