@@ -57,7 +57,7 @@ const addRoute = asyncHandler(async (req, res) => {
 })
 
 const editRoute = asyncHandler(async (req, res) => {
-    const {email, role, id, name, price,} = req.body
+    const {email, role, id, name, price} = req.body
 
     const userValidate = await Users.findOne({ email, role })
 

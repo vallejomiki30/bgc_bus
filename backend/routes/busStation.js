@@ -1,13 +1,13 @@
 import express from 'express'
 import { 
-    getStations,
+    getStationsByRoute,
     addStation,
     editStation,
     deleteStation,
 } from '../controllers/busStationController.js'
 const router = express.Router()
 
-router.get('/', getStations)
+router.get('/', getStationsByRoute)
 router.post('/add', addStation)
 router.post('/edit', editStation)
 router.delete('/delete', deleteStation)

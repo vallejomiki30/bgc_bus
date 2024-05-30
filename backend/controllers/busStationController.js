@@ -3,10 +3,11 @@ import Sequence from '../models/sequence.js'
 import Stations from '../models/busStation.js'
 import Users from '../models/user.js'
 
-const getStations = asyncHandler(async (req, res) => {
-    const data = {"route": "test_route"}
+const getStationsByRoute = asyncHandler(async (req, res) => {
+    const { route_id } = req.body
+    const data = await Stations.find({ route_id })
     if (data) {
-        res.status(200).json(data)
+        res.status(200).json({"results": data})
     }
     else {
         res.status(400)
@@ -112,7 +113,7 @@ const deleteStation = asyncHandler(async (req, res) => {
 })
 
 export {
-    getStations,
+    getStationsByRoute,
     addStation,
     editStation,
     deleteStation,
