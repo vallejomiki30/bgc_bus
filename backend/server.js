@@ -14,6 +14,7 @@ import testRoute from './routes/testRoute.js'
 import userRoute from './routes/userRoute.js'
 import busRoute from './routes/busRoute.js'
 import busStation from './routes/busStation.js'
+import walkRouteComputation  from './routes/walkRouteComputation.js'
 
 const app = express()
 
@@ -29,6 +30,7 @@ app.use('/api_v1/test', testRoute)
 app.use('/api_v1/user', userRoute)
 app.use('/api_v1/route', busRoute)
 app.use('/api_v1/station', busStation)
+app.use('/api_v1/walk', walkRouteComputation)
 
 app.get('/', (req,res) => res.send('Server is running.'))
 
