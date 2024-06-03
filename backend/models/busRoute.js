@@ -18,6 +18,10 @@ const routeSchema = mongoose.Schema(
             type: String,
             default: "1001"
         },
+        station_order: {
+            type: Array,
+            default: null
+        }
     },
     {
         timestamps: true

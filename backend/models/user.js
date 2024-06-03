@@ -28,6 +28,14 @@ const userSchema = mongoose.Schema(
             type: String,
             required: [true, "Please enter your Role"]
         },
+        route_id: {
+            type: String,
+            default: "NA"
+        },
+        bus_current_station: {
+            type: String,
+            default: "NA"
+        }
     },
     {
         timestamps: true
