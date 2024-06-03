@@ -35,7 +35,15 @@ const userSchema = mongoose.Schema(
         bus_current_station: {
             type: String,
             default: "NA"
-        }
+        },
+        bus_longitude: {
+            type: String,
+            default: "NA"
+        },
+        bus_latitude: {
+            type: String,
+            default: "NA"
+        },
     },
     {
         timestamps: true
