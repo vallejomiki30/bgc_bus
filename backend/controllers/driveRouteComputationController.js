@@ -105,7 +105,7 @@ const driveCompute = asyncHandler(async (req, res) => {
 
         let newArray = splitAndReconnect(station_order, bus_current_station);
 
-        for (let i=0; i < newArray.length; i++) {
+        for (let i=0; i < 1; i++) {
             const val = newArray[i];
             const station_details = await Stations.find({ id: val })
             const body_data = {
