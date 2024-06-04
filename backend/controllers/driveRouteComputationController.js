@@ -173,7 +173,6 @@ const driveCompute = asyncHandler(async (req, res) => {
 
 export {
     getETA,
-    nextStation,
     driveCompute,
 }
 
