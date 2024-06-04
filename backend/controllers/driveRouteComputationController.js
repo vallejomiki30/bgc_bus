@@ -152,8 +152,12 @@ const driveCompute = asyncHandler(async (req, res) => {
                 totalTime = totalTime + duration
                 ETA.push({"station_id": station_details[0].id, "station_name": station_details[0].name, "duration": totalTime,"ETA_minutes": minutes, "ETA_seconds": Number(seconds), "distance": distance})
           }
-        if (ETA) {
+        if (ETA && duration <=  120) {
             const update = await Users.findOneAndUpdate({email: email},{"bus_current_station": newArray[0], bus_latitude, bus_longitude},{new:true})
+            res.status(200).json({"data": ETA})
+        }
+        else if (ETA && duration > 120) {
+            const update = await Users.findOneAndUpdate({email: email},{bus_latitude, bus_longitude},{new:true})
             res.status(200).json({"data": ETA})
         }
         else{
@@ -169,6 +173,7 @@ const driveCompute = asyncHandler(async (req, res) => {
 
 export {
     getETA,
+    nextStation,
     driveCompute,
 }
 
