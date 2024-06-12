@@ -12,10 +12,12 @@ const port = process.env.PORT || 9000
 
 import testRoute from './routes/testRoute.js'
 import userRoute from './routes/userRoute.js'
+import driverRoute from './routes/driverRoute.js'
 import busRoute from './routes/busRoute.js'
 import busStation from './routes/busStation.js'
 import walkRouteComputation  from './routes/walkRouteComputation.js'
 import driveRouteComputation from './routes/driveRouteComputation.js'
+
 
 const app = express()
 
@@ -29,6 +31,7 @@ app.use(express.urlencoded({extended: true}))
 
 app.use('/api_v1/test', testRoute)
 app.use('/api_v1/user', userRoute)
+app.use('/api_v1/driver', driverRoute)
 app.use('/api_v1/route', busRoute)
 app.use('/api_v1/station', busStation)
 app.use('/api_v1/walk', walkRouteComputation)
